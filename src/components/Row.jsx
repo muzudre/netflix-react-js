@@ -12,8 +12,6 @@ const Row = ({ title, fetchURL, rowID }) => {
     });
   }, [fetchURL]);
 
-  console.log(movies);
-
   const slideLeft = () => {
     var slider = document.getElementById("slider" + rowID);
     slider.scrollLeft = slider.scrollLeft - 500;
@@ -38,7 +36,7 @@ const Row = ({ title, fetchURL, rowID }) => {
           className="w-full h-full overflow-x-scroll whitespace-nowrap scroll-smooth scrollbar-hide relative"
         >
           {movies.map((item, id) => (
-            <Movie item={item} id={id} />
+            <Movie item={item} key={id} />
           ))}
         </div>
         <MdChevronRight

@@ -1,13 +1,10 @@
 import React, { useEffect, useState } from "react";
 import { FaHeart, faHeart, FaRegHeart } from "react-icons/fa";
 
-const Movie = ({ item, id }) => {
+const Movie = ({ item }) => {
   const [like, setLike] = useState(false);
   return (
-    <div
-      key={id}
-      className="w-[160px] sm:w-[200px] md:w-[240px] inline-block cursor-pointer relative p-2"
-    >
+    <div className="w-[160px] sm:w-[200px] md:w-[240px] inline-block cursor-pointer relative p-2">
       <img
         className="w-full h-auto block"
         src={
