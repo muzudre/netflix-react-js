@@ -22,7 +22,7 @@ export const Navbar = () => {
           NETFLIX
         </h1>
       </Link>
-      {user?.email ? (
+      {user && user?.email ? (
         <div>
           <Link to="/account">
             <button className="text-white pr-4">Account</button>
