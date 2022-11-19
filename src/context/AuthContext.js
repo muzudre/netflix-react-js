@@ -10,7 +10,11 @@ export function AuthContextProvider({ children }) {
 
     function signUp(email, password) {
         createUserWithEmailAndPassword(auth, email, password)
-        setDoc(doc(db, 'users', email), {
+        setData(email)
+    }
+
+    async function setData(email) {
+        await setDoc(doc(db, 'users', email), {
             savedShows: []
         })
     }
@@ -30,10 +34,10 @@ export function AuthContextProvider({ children }) {
         return () => {
             unsubscribe()
         }
-    }, [])
+    })
 
     return (
-        <AuthContext.Provider value={{ signUp, user, logIn, logOut }}>
+        <AuthContext.Provider value={{ signUp, logIn, logOut, user }}>
             {children}
         </AuthContext.Provider>
     )
