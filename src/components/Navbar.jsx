@@ -24,6 +24,9 @@ export const Navbar = () => {
       </Link>
       {user && user?.email ? (
         <div>
+          <Link to="/search">
+            <button className="text-white pr-4">Search</button>
+          </Link>
           <Link to="/account">
             <button className="text-white pr-4">Account</button>
           </Link>
@@ -37,6 +40,9 @@ export const Navbar = () => {
         </div>
       ) : (
         <div>
+          <Link to="/search">
+            <button className="text-white pr-4">Search</button>
+          </Link>
           <Link to="/login">
             <button className="text-white pr-4">Sing In</button>
           </Link>
